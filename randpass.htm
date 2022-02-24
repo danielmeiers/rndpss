@@ -1,0 +1,30 @@
+<script>
+
+function randnum() {
+
+	return Math.floor(Math.random() * 204);
+
+}
+
+function randPass(length) {
+	var newpass = "";
+	var randchar = "";
+	var pickstr = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz01234567890123456789012345678901234567890123456789!#$^*!#$^*!#$^*!#$^*!#$^*!#$^*!#$^*!#$^*!#$^*!#$^*";
+
+	var randsel = 0;
+
+		while (newpass.length < length) {
+			randsel = randnum();
+			randchar = pickstr.substr(randsel, 1);			
+			if (newpass.indexOf(randchar) == -1) {
+				newpass = newpass + randchar;
+			}
+		}
+return newpass;
+}
+
+document.write(randPass(15));
+
+</script>
+
+
